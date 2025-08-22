@@ -47,3 +47,14 @@ void selection_sort(int *nums, int size) {
     i++;
   }
 }
+
+
+int get_index(int *nums, int size, int value) {
+  int i = 0;
+  while (i < size) {
+    if (nums[i] == value)
+      return i;
+    i++;
+  }
+  return NOT_FOUND;
+}
