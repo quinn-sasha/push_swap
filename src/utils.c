@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 16:09:25 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/22 20:22:37 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 08:24:14by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,25 @@ int *convert_words_to_integers(char **words, int size) {
     i++;
   }
   return result;
+}
+
+/*
+* 入力：整数の配列、配列の要素数
+* 副作用：numsがソートされる
+*/
+void selection_sort(int *nums, int size) {
+  int i = 0;
+  while (i < size - 1) {
+    int min_value_index = i;
+    int j = i + 1;
+    while (j < size) {
+      if (nums[j] < nums[min_value_index])
+        min_value_index = j;
+      j++;
+    }
+    int temp = nums[i];
+    nums[i] = nums[min_value_index];
+    nums[min_value_index] = temp;
+    i++;
+  }
 }
