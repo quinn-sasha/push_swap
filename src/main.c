@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/22 19:10:26 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/22 20:23:06 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 * 副作用：int *numsを動的に割り当てて、解放する
 */
 void initialize_nodes(t_node *nodes, int size, char *input_nums) {
-  int *nums = convert_argv_to_integers(input_nums, size);
+  int *nums = convert_words_to_integers(input_nums, size);
   int i = 0;
   while (i < size) {
     nodes[i].data = nums[i];

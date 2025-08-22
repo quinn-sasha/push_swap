@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 16:09:25 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/22 16:52:55 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/22 20:22:37 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 * 入力：文字列の配列、出力する配列のサイズ
 * 出力：各文字列を数字に変換して、その数字を入れた整数の配列
 */
-int *convert_argv_to_integers(char **words, int size) {
+int *convert_words_to_integers(char **words, int size) {
   int *result = malloc(sizeof(int) * size);
   int i = 0;
   while (i < size) {

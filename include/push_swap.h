@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/22 16:54:07 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/22 20:22:27 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ typedef struct s_stack {
 } t_stack;
 
 // utils.c
-int *convert_argv_to_integers(char **words, int size);
-
+int *convert_words_to_integers(char **words, int size);
 #endif
