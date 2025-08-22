@@ -48,7 +48,10 @@ void selection_sort(int *nums, int size) {
   }
 }
 
-
+/*
+* 入力：整数の配列、配列の要素数、数字
+* 出力：配列の中の数字の位置. もし存在しなければ -1.
+*/
 int get_index(int *nums, int size, int value) {
   int i = 0;
   while (i < size) {

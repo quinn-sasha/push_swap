@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/22 20:38:09 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 08:39:00 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void initialize_nodes(t_node *nodes, int size, char *input_nums) {
   }
   int sorted_nums[size];
   ft_memcpy(sorted_nums, nums, sizeof(int) * size);
-  selection_sort(sorted_nums); // TODO
+  selection_sort(sorted_nums, size);
   i = 0;
   while (i < size) {
-    int index = get_index(sorted_nums, nodes[i].data); // TODO
+    int index = get_index(sorted_nums, size, nodes[i].data);
     nodes[i].sorted_index = index;
     i++;
   }
