@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 16:11:52 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 16:31:40 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,12 @@ void rotate_stack1_right(t_stack *stack1) {
 
 // Assume stack has more than 2 elements
 void swap(t_stack *stack) {
-  int temp = stack->head->data;
+  int temp_data = stack->head->data;
+  int temp_index = stack->head->sorted_index;
   stack->head->data = stack->head->next->data;
-  stack->head->next->data = temp;
+  stack->head->sorted_index = stack->head->next->sorted_index;
+  stack->head->next->data = temp_data;
+  stack->head->next->sorted_index = temp_index;
 }
 
 void swap_stack1(t_stack *stack1) {
