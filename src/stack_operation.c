@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 16:31:40 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 17:17:07 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,19 @@ void push(t_stack *stack, t_node *node) {
   last->next = node;
   stack->head = node;
   stack->size++;
+}
+
+/*
+* 出力：リストから削除したスタックの先頭
+* 副作用：
+* - スタックの先頭が、繋ぎかえられてリストから削除される
+*/
+t_node *pop(t_stack *stack) {
+  stack->head->next->prev = stack->head->prev;
+  stack->head->prev->next = stack->head->next;
+  t_node *node_to_delete = stack->head;
+  stack->head = stack->head->next;
+  node_to_delete->next = node_to_delete;
+  node_to_delete->prev = node_to_delete;
+  return node_to_delete;
 }
