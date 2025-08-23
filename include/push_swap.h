@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 10:39:21 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 16:15:02 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <stdio.h>
 #include "../libft/libft.h"
+
+# define SMALLER_CHUNK_SIZE 20
+# define BIGGER_CHUNK_SIZE 50
 
 typedef struct s_node {
   int data;
@@ -35,7 +38,14 @@ int *convert_words_to_integers(char **words, int size);
 void selection_sort(int *nums, int size);
 int get_index(int *nums, int size, int value);
 // stack_operation.c
+void rotate_left(t_stack *stack);
+void rotate_right(t_stack *stack);
+void rotate_stack1_left(t_stack *stack1);
+void rotate_stack1_right(t_stack *stack1);
+void swap(t_stack *stack);
+void swap_stack1(t_stack *stack1);
 void push(t_stack *stack, t_node *node);
+
 
 void initialize_nodes(t_node *nodes, int size, char **input_nums);
 void initialize_stack1(t_stack *stack, int max_size, char **input_nums);

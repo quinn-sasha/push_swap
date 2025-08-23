@@ -6,11 +6,29 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 14:54:55 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 16:11:52 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void rotate_left(t_stack *stack) {
+  stack->head = stack->head->next;
+}
+
+void rotate_right(t_stack *stack) {
+  stack->head = stack->head->prev;
+}
+
+void rotate_stack1_left(t_stack *stack1) {
+  ft_putendl_fd("Rotate stack1 left", STDOUT_FILENO);
+  rotate_left(stack1);
+}
+
+void rotate_stack1_right(t_stack *stack1) {
+  ft_putendl_fd("Rotate stack1 right", STDOUT_FILENO);
+  rotate_right(stack1);
+}
 
 // Assume stack has more than 2 elements
 void swap(t_stack *stack) {
