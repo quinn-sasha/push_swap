@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 10:19:03 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 10:38:30 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 * nodeのメンバである data, sorted_index, next, prev を初期化する
 * 副作用：int *numsを動的に割り当てて、解放する
 */
-void initialize_nodes(t_node *nodes, int size, char *input_nums) {
+void initialize_nodes(t_node *nodes, int size, char **input_nums) {
   int *nums = convert_words_to_integers(input_nums, size);
   int i = 0;
   while (i < size) {
@@ -43,7 +43,7 @@ void initialize_nodes(t_node *nodes, int size, char *input_nums) {
   * stack構造体のメンバである head, size, max_sizeを初期化する
   * t_node *nodesを動的に割り当てて、解放する
 */
-void initialize_stack1(t_stack *stack, int max_size, char *input_nums) {
+void initialize_stack1(t_stack *stack, int max_size, char **input_nums) {
   stack->max_size = max_size;
   stack->size = 0;
   stack->head = NULL;
