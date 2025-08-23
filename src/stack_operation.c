@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 17:17:07 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 17:22:36 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,10 @@ t_node *pop(t_stack *stack) {
   node_to_delete->prev = node_to_delete;
   return node_to_delete;
 }
+
+void pop_and_push(t_stack *from_stack, t_stack *to_stack) {
+  t_node *node_to_transfer = pop(from_stack);
+  push(to_stack, node_to_transfer);
+}
+
+
