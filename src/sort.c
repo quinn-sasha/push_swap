@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 16:37:00 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 18:55:06 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ void sort_less_than_five_elements(t_stack *stack1, t_stack *stack2) {
     while (stack1->head->sorted_index != min_index) {
         rotate_stack1_left(stack1);
     }
+    pop_stack1_and_push_stack2(stack1, stack2);
     min_index++;
-    // pop stack1 and push to stack2
   }
-  // sort three elements
-  // put elements back to stack1
+  sort_three_elements(stack1);
+  pop_stack2_and_push_stack1(stack1, stack2);
+  pop_stack2_and_push_stack1(stack1, stack2);
 }
 
 // Checked swap 1 was unordered
@@ -53,7 +54,7 @@ void sort(t_stack *stack1, t_stack *stack2) {
     return;
   }
   if (stack1->size <= 5) {
-    // sort less than 5 elements
+    sort_less_than_five_elements(stack1, stack2);
     return;
   }
   int chunk_size;

@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 16:15:02 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 18:51:54 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ void rotate_stack1_right(t_stack *stack1);
 void swap(t_stack *stack);
 void swap_stack1(t_stack *stack1);
 void push(t_stack *stack, t_node *node);
-
+t_node *pop(t_stack *stack);
+void pop_and_push(t_stack *from_stack, t_stack *to_stack);
+void pop_stack1_and_push_stack2(t_stack *stack1, t_stack *stack2);
+void pop_stack2_and_push_stack1(t_stack *stack1, t_stack *stack2);
 
 void initialize_nodes(t_node *nodes, int size, char **input_nums);
 void initialize_stack1(t_stack *stack, int max_size, char **input_nums);
