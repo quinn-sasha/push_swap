@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 08:41:56 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 08:49:15 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ typedef struct s_node {
 } t_node;
 
 typedef struct s_stack {
-  t_link head;
-  int size;
   int max_size;
+  int size;
+  t_link head;
+  t_node *nodes;
 } t_stack;
 
 // utils.c

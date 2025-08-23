@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 08:39:00 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 09:07:29 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void initialize_nodes(t_node *nodes, int size, char *input_nums) {
   * stack構造体のメンバである head, size, max_sizeを初期化する
   * t_node *nodesを動的に割り当てて、解放する
 */
-void initialize_stack(t_stack *stack, int max_size, char *input_nums) {
+void initialize_stack1(t_stack *stack, int max_size, char *input_nums) {
   stack->max_size = max_size;
   stack->size = 0;
   stack->head = NULL;
-  t_node *nodes = malloc(sizeof(t_node) * max_size);
-  initialize_nodes(nodes, max_size, input_nums);
+  stack->nodes = malloc(sizeof(t_node) * max_size);
+  initialize_nodes(stack->nodes, max_size, input_nums);
   int i = 0;
   while (i < max_size) {
     // push(stack, nodes[i])
@@ -56,9 +56,18 @@ void initialize_stack(t_stack *stack, int max_size, char *input_nums) {
   }
 }
 
+void initialize_stack2(t_stack *stack, int max_size) {
+  stack->max_size = max_size;
+  stack->size = 0;
+  stack->head = NULL;
+  stack->nodes = NULL;
+}
+
 int main(int argc, char *argv[]) {
   // TODO: validate input
   t_stack stack1;
   t_stack stack2;
-  initialize_stack(&stack1, argc - 1, argv + 1);
+  initialize_stack1(&stack1, argc - 1, argv + 1);
+  initialize_stack2(&stack2, argc - 1);
+  // free stack1
 }
