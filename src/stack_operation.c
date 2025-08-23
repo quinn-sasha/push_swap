@@ -6,11 +6,23 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 11:08:07 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 14:54:55 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+// Assume stack has more than 2 elements
+void swap(t_stack *stack) {
+  int temp = stack->head->data;
+  stack->head->data = stack->head->next->data;
+  stack->head->next->data = temp;
+}
+
+void swap_stack1(t_stack *stack1) {
+  ft_putendl_fd("Swap top 2 elments of stack1", STDOUT_FILENO);
+  swap(stack1);
+}
 
 /*
 * 入力：stack構造体へのポインタ、node構造体へのポインタ
