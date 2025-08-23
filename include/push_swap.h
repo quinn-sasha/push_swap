@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 10:07:24 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 10:16:50 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ typedef struct s_stack {
 int *convert_words_to_integers(char **words, int size);
 void selection_sort(int *nums, int size);
 int get_index(int *nums, int size, int value);
+// stack_operation.c
+void push(t_stack *stack, t_node *node);
 
 #endif

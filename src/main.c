@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 09:07:29 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 10:19:03 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void initialize_nodes(t_node *nodes, int size, char *input_nums) {
   int i = 0;
   while (i < size) {
     nodes[i].data = nums[i];
-    nodes[i].next = NULL;
-    nodes[i].prev = NULL;
+    nodes[i].next = &nodes[i];
+    nodes[i].prev = &nodes[i];
     i++;
   }
   int sorted_nums[size];
@@ -49,10 +49,10 @@ void initialize_stack1(t_stack *stack, int max_size, char *input_nums) {
   stack->head = NULL;
   stack->nodes = malloc(sizeof(t_node) * max_size);
   initialize_nodes(stack->nodes, max_size, input_nums);
-  int i = 0;
-  while (i < max_size) {
-    // push(stack, nodes[i])
-    i++;
+  int i = max_size - 1;
+  while (i >= 0) {
+    push(stack, &stack->nodes[i]);
+    i--;
   }
 }
 
