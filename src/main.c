@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 10:38:30 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 11:13:01 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void initialize_nodes(t_node *nodes, int size, char **input_nums) {
   }
   int sorted_nums[size];
   ft_memcpy(sorted_nums, nums, sizeof(int) * size);
+  free(nums);
   selection_sort(sorted_nums, size);
   i = 0;
   while (i < size) {
@@ -41,7 +42,7 @@ void initialize_nodes(t_node *nodes, int size, char **input_nums) {
 * 出力：なし
 * 副作用：
   * stack構造体のメンバである head, size, max_sizeを初期化する
-  * t_node *nodesを動的に割り当てて、解放する
+  * t_node *nodesを動的に割り当てる（プログラム終了時に解放する）。
 */
 void initialize_stack1(t_stack *stack, int max_size, char **input_nums) {
   stack->max_size = max_size;
