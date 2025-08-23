@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 16:28:32 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 16:37:00 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void sort_less_than_five_elements(t_stack *stack1, t_stack *stack2) {
     while (stack1->head->sorted_index != min_index) {
         rotate_stack1_left(stack1);
     }
-    // move smallest value to top of stack1
+    min_index++;
     // pop stack1 and push to stack2
   }
   // sort three elements
