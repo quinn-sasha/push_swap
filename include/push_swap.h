@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 08:49:15 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/23 10:07:24 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,17 @@
 #include <stdio.h>
 #include "../libft/libft.h"
 
-typedef struct s_node *t_link;
-
 typedef struct s_node {
   int data;
   int sorted_index;
-  t_link next;
-  t_link prev;
+  struct s_node *next;
+  struct s_node *prev;
 } t_node;
 
 typedef struct s_stack {
   int max_size;
   int size;
-  t_link head;
+  t_node *head;
   t_node *nodes;
 } t_stack;
 
