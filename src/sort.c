@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 18:55:06 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 08:47:12 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,28 @@ void sort_less_than_five_elements(t_stack *stack1, t_stack *stack2) {
   pop_stack2_and_push_stack1(stack1, stack2);
 }
 
+/*
+* stack1からstack2に全ての要素を移す。
+* 小さい数から移動させたいので、min_index + chunk_sizeに収まるものから動かす。
+*/
+void transfer_all_items_to_stack2(t_stack *stack1, t_stack *stack2, int chunk_size) {
+  int min_index = 0;
+  while (stack1->size > 0) {
+    if (stack1->head->sorted_index <= min_index) {
+      pop_stack1_and_push_stack2(stack1, stack2);
+      min_index++;
+      continue;
+    }
+    if (stack1->head->sorted_index <= min_index + chunk_size) {
+      pop_stack1_and_push_stack2(stack1, stack1);
+      rotate_stack2_left(stack2);
+      min_index++;
+      continue;
+    }
+    rotate_stack1_left(stack1);
+  }
+}
+
 // Checked swap 1 was unordered
 void sort(t_stack *stack1, t_stack *stack2) {
   if (stack1->size == 1)
@@ -63,5 +85,6 @@ void sort(t_stack *stack1, t_stack *stack2) {
   else
     chunk_size = BIGGER_CHUNK_SIZE;
   // transfer nodes to stack2
+  transfer_all_items_to_stack2(stack1, stack2, chunk_size);
   // put back then to stack1
 }

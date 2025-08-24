@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/23 18:56:58 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 08:43:57 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ void rotate_stack1_left(t_stack *stack1) {
 void rotate_stack1_right(t_stack *stack1) {
   ft_putendl_fd("Rotate stack1 right", STDOUT_FILENO);
   rotate_right(stack1);
+}
+
+void rotate_stack2_left(t_stack *stack2) {
+  ft_putendl_fd("Rotate stack2 left", STDOUT_FILENO);
+  rotate_left(stack2);
+}
+
+void rotate_stack2_right(t_stack *stack2) {
+  ft_putendl_fd("Rotate stack2 right", STDOUT_FILENO);
+  rotate_right(stack2);
 }
 
 // Assume stack has more than 2 elements
