@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 10:46:14 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 11:45:09 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 #include <stdio.h>
+#include <limits.h>
 #include "../libft/libft.h"
 
 # define SMALLER_CHUNK_SIZE 20
@@ -40,6 +41,7 @@ int *convert_words_to_integers(char **words, int size);
 void selection_sort(int *nums, int size);
 int get_index(int *nums, int size, int value);
 int get_max_index_position(t_stack *stack);
+int get_max_index(t_stack *stack);
 // rotate1.c
 void rotate_left(t_stack *stack);
 void rotate_right(t_stack *stack);
