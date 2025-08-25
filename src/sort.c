@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 11:46:47 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 12:59:22squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void transfer_all_items_to_stack2(t_stack *stack1, t_stack *stack2, int chunk_si
       continue;
     }
     if (stack1->head->sorted_index <= min_index + chunk_size) {
-      pop_stack1_and_push_stack2(stack1, stack1);
+      pop_stack1_and_push_stack2(stack1, stack2);
       rotate_stack2_left(stack2);
       min_index++;
       continue;
