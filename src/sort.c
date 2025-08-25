@@ -6,14 +6,14 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 09:16:20 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 09:34:58 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 void sort_three_elements(t_stack *stack1) {
-  int max_index = stack1->max_size;
+  int max_index = stack1->size - 1;
   if (stack1->head->data == max_index)
     rotate_stack1_left(stack1);
   else if (stack1->head->next->data == max_index)
