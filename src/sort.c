@@ -6,19 +6,19 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 10:46:31 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 11:46:47 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 void sort_three_elements(t_stack *stack1) {
-  int max_index = stack1->size - 1;
-  if (stack1->head->data == max_index)
+  int max_index = get_max_index(stack1);
+  if (stack1->head->sorted_index == max_index)
     rotate_stack1_left(stack1);
-  else if (stack1->head->next->data == max_index)
+  else if (stack1->head->next->sorted_index == max_index)
     rotate_stack1_right(stack1);
-  if (stack1->head->data > stack1->head->next->data)
+  if (stack1->head->sorted_index > stack1->head->next->sorted_index)
     swap_stack1(stack1);
 }
 
@@ -41,8 +41,9 @@ void sort_less_than_five_elements(t_stack *stack1, t_stack *stack2) {
     min_index++;
   }
   sort_three_elements(stack1);
-  pop_stack2_and_push_stack1(stack1, stack2);
-  pop_stack2_and_push_stack1(stack1, stack2);
+  while (stack2->size > 0) {
+    pop_stack2_and_push_stack1(stack1, stack2);
+  }
 }
 
 /*
