@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 09:34:58 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 10:46:31 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void put_back_all_items_to_stack1(t_stack *stack1, t_stack *stack2) {
       pop_stack2_and_push_stack1(stack1, stack2);
       continue;
     }
-    int position = get_biggest_num_position(stack2);
+    int position = get_max_index_position(stack2);
     int num_left_rotations = position;
     int num_right_rotations = stack2->size - num_left_rotations;
     int direction;

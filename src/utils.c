@@ -61,3 +61,19 @@ int get_index(int *nums, int size, int value) {
   }
   return NOT_FOUND;
 }
+
+/*
+* 入力：スタック構造体
+* 出力：スタックが持つ最も大きい要素の、リスト先頭からの位置
+* 注意：size - 1に等しい sorted_index を持つ要素が必ずあるという前提で動く
+*/
+int get_max_index_position(t_stack *stack) {
+  int max_index = stack->size - 1;
+  t_node *node = stack->head;
+  int position = 0;
+  while (node->sorted_index != max_index) {
+    node = node->next;
+    position++;
+  }
+  return position;
+}
