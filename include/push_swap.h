@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 09:24:10 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 09:33:54 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_node {
 } t_node;
 
 typedef struct s_stack {
-  int max_size;
   int size;
   t_node *head;
   t_node *nodes;
@@ -63,7 +62,7 @@ void put_back_all_items_to_stack1(t_stack *stack1, t_stack *stack2);
 void sort(t_stack *stack1, t_stack *stack2);
 // initialize_stack.c
 void initialize_nodes(t_node *nodes, int size, char **input_nums);
-void initialize_stack1(t_stack *stack, int max_size, char **input_nums);
-void initialize_stack2(t_stack *stack, int max_size);
+void initialize_stack1(t_stack *stack, int size, char **input_nums);
+void initialize_stack2(t_stack *stack);
 
 #endif

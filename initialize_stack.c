@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 09:25:05 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 09:25:57 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 09:34:04 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,22 @@ void initialize_nodes(t_node *nodes, int size, char **input_nums) {
 * 入力：初期化されていないスタック, スタックの要素数、プログラムへの引数
 * 出力：なし
 * 副作用：
-  * stack構造体のメンバである head, size, max_sizeを初期化する
+  * stack構造体のメンバである head, size, sizeを初期化する
   * t_node *nodesを動的に割り当てる（プログラム終了時に解放する）。
 */
-void initialize_stack1(t_stack *stack, int max_size, char **input_nums) {
-  stack->max_size = max_size;
+void initialize_stack1(t_stack *stack, int size, char **input_nums) {
   stack->size = 0;
   stack->head = NULL;
-  stack->nodes = malloc(sizeof(t_node) * max_size);
-  initialize_nodes(stack->nodes, max_size, input_nums);
-  int i = max_size - 1;
+  stack->nodes = malloc(sizeof(t_node) * size);
+  initialize_nodes(stack->nodes, size, input_nums);
+  int i = size - 1;
   while (i >= 0) {
     push(stack, &stack->nodes[i]);
     i--;
   }
 }
 
-void initialize_stack2(t_stack *stack, int max_size) {
-  stack->max_size = max_size;
+void initialize_stack2(t_stack *stack) {
   stack->size = 0;
   stack->head = NULL;
   stack->nodes = NULL;
