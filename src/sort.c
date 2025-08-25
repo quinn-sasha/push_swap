@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:13:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 08:47:12 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 09:16:20 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,30 @@ void transfer_all_items_to_stack2(t_stack *stack1, t_stack *stack2, int chunk_si
   }
 }
 
+/*
+* stack2に入れた要素を全てstack1に戻す。
+* 大きい数から順に移す。
+*/
+void put_back_all_items_to_stack1(t_stack *stack1, t_stack *stack2) {
+  while (stack2->size > 0) {
+    if (stack2->head->sorted_index == stack2->size - 1) {
+      pop_stack2_and_push_stack1(stack1, stack2);
+      continue;
+    }
+    int position = get_biggest_num_position(stack2);
+    int num_left_rotations = position;
+    int num_right_rotations = stack2->size - num_left_rotations;
+    int direction;
+    if (num_left_rotations < num_right_rotations)
+      direction = LEFT;
+    else
+      direction = RIGHT;
+    while (stack2->head->sorted_index != stack2->size - 1)
+      rotate_stack2(stack2, direction);
+    pop_stack2_and_push_stack1(stack1, stack2);
+  }
+}
+
 // Checked swap 1 was unordered
 void sort(t_stack *stack1, t_stack *stack2) {
   if (stack1->size == 1)
@@ -84,7 +108,6 @@ void sort(t_stack *stack1, t_stack *stack2) {
     chunk_size = SMALLER_CHUNK_SIZE;
   else
     chunk_size = BIGGER_CHUNK_SIZE;
-  // transfer nodes to stack2
   transfer_all_items_to_stack2(stack1, stack2, chunk_size);
-  // put back then to stack1
+  put_back_all_items_to_stack1(stack1, stack2);
 }

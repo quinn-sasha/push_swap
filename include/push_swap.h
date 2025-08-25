@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 08:44:38 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 09:12:52 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 
 # define SMALLER_CHUNK_SIZE 20
 # define BIGGER_CHUNK_SIZE 50
+
+# define LEFT 0
+# define RIGHT 1
 
 typedef struct s_node {
   int data;
@@ -44,6 +47,7 @@ void rotate_stack1_left(t_stack *stack1);
 void rotate_stack1_right(t_stack *stack1);
 void rotate_stack2_left(t_stack *stack2);
 void rotate_stack2_right(t_stack *stack2);
+void rotate_stack2(t_stack *stack2, int direction);
 void swap(t_stack *stack);
 void swap_stack1(t_stack *stack1);
 void push(t_stack *stack, t_node *node);
