@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 09:12:52 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 09:19:19 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,12 @@ t_node *pop(t_stack *stack);
 void pop_and_push(t_stack *from_stack, t_stack *to_stack);
 void pop_stack1_and_push_stack2(t_stack *stack1, t_stack *stack2);
 void pop_stack2_and_push_stack1(t_stack *stack1, t_stack *stack2);
+// sort.c
+void sort_three_elements(t_stack *stack1);
+void sort_less_than_five_elements(t_stack *stack1, t_stack *stack2);
+void transfer_all_items_to_stack2(t_stack *stack1, t_stack *stack2, int chunk_size);
+void put_back_all_items_to_stack1(t_stack *stack1, t_stack *stack2);
+void sort(t_stack *stack1, t_stack *stack2);
 
 void initialize_nodes(t_node *nodes, int size, char **input_nums);
 void initialize_stack1(t_stack *stack, int max_size, char **input_nums);
