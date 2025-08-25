@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 09:40:22 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 10:02:38 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int main(int argc, char *argv[]) {
   initialize_stack1(&stack1, num_arguments, argv + 1);
   initialize_stack2(&stack2);
   sort(&stack1, &stack2);
-  // free stack1
+  free(stack1.nodes);
 }
