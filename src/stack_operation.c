@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 10:48:26 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 11:01:51 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,16 @@ void push(t_stack *stack, t_node *node) {
 * - スタックのサイズが1減る
 */
 t_node *pop(t_stack *stack) {
+  t_node *node_to_delete;
+  if (stack->size == 1) {
+    node_to_delete = stack->head;
+    stack->head = NULL;
+    stack->size--;
+    return node_to_delete;
+  }
   stack->head->next->prev = stack->head->prev;
   stack->head->prev->next = stack->head->next;
-  t_node *node_to_delete = stack->head;
+  node_to_delete = stack->head;
   stack->head = stack->head->next;
   node_to_delete->next = node_to_delete;
   node_to_delete->prev = node_to_delete;
