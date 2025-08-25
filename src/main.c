@@ -6,15 +6,18 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 10:02:38 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 15:11:22 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 int main(int argc, char *argv[]) {
-  // TODO: validate input
-  // TOSO: is_sorted() check
+  if (argc == 1)
+    handle_error();
+  char **valid_argv;
+  int num_arguments = validate_input(argc, argv, valid_argv);
+  // TODO: is_sorted() check
   int num_arguments = argc - 1;
   t_stack stack1;
   t_stack stack2;
