@@ -79,7 +79,7 @@ int get_max_index_position(t_stack *stack) {
 }
 
 int get_max_index(t_stack *stack) {
-  int max_index = INT_MIN;
+  int max_index = -1;
   t_node *node = stack->head;
   int i = 0;
   while (i < stack->size) {
@@ -88,5 +88,5 @@ int get_max_index(t_stack *stack) {
     node = node->next;
     i++;
   }
-  return NOT_FOUND;
+  return max_index;
 }
