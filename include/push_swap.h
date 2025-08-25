@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 09:33:54 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 10:18:11 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,19 @@ typedef struct s_stack {
 int *convert_words_to_integers(char **words, int size);
 void selection_sort(int *nums, int size);
 int get_index(int *nums, int size, int value);
-// stack_operation.c
+// rotate1.c
 void rotate_left(t_stack *stack);
 void rotate_right(t_stack *stack);
+// rotate2.c
 void rotate_stack1_left(t_stack *stack1);
 void rotate_stack1_right(t_stack *stack1);
 void rotate_stack2_left(t_stack *stack2);
 void rotate_stack2_right(t_stack *stack2);
 void rotate_stack2(t_stack *stack2, int direction);
+// swap.c
 void swap(t_stack *stack);
 void swap_stack1(t_stack *stack1);
+// stack_operation.c
 void push(t_stack *stack, t_node *node);
 t_node *pop(t_stack *stack);
 void pop_and_push(t_stack *from_stack, t_stack *to_stack);
