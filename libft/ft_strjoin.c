@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 10:57:19 by squinn            #+#    #+#             */
-/*   Updated: 2025/07/02 18:29:46 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 15:24:47 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	if (s1 == NULL)
+		return (ft_strdup(s2));
+	if (s2 == NULL)
+		return (ft_strdup(s1));
 	new_string = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!new_string)
 		return (NULL);
