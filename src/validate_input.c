@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 14:58:54 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 15:43:18 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 21:20:00 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,46 @@ void handle_error(void) {
   exit(EXIT_FAILURE);
 }
 
-/*
-* 入力：プログラムのargc, argv, 正しさが検証されたargv
-* 出力：valid_argvの文字列数
-* 副作用：valid_argvが持つ、新たに割当られた文字列の配列(initialize_stack1()で解放される)
-*/
-int validate_input(int argc, char *argv[], char *valid_argv[]) {
+int contains_only_numbers(int argc, char *argv[]) {
   int i = 1;
-  char *joined_strings = NULL;
   while (i < argc) {
-    char *temp = joined_strings;
-    joined_strings = ft_strjoin(joined_strings, argv[i]);
-    free(temp);
+    char *number = argv[i];
+    int j = 0;
+    while (number[j]) {
+      if (!ft_isdigit(number[j]))
+        return FALSE;
+      j++;
+    }
     i++;
   }
-  if (joined_strings == NULL)
+  return TRUE;
+}
 
+int contains_only_int_type(int argc, char *argv[]) {
+  int i = 1;
+  while (i < argc) {
+    long long int num = ft_atoi(argv[i]);
+    if (num < INT_MIN || num > INT_MAX)
+      return FALSE;
+    i++;
+  }
+  return TRUE;
+}
+
+/*
+* 入力：プログラムのargc, argv
+* エラーケース：
+* - 入力が数字ではない
+* - 入力がint型の範囲を超える
+* - 入力に重複がある
+*/
+void validate_input(int argc, char *argv[]) {
+  if (!argv[0])
+    handle_error();
+  if (!contains_only_numbers(argc, argv))
+    handle_error();
+  if (!contains_only_int_type(argc, argv))
+    handle_error();
+  if (!contains_duplicates(argc, argv))
+    handle_error();
 }
