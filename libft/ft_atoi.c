@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 17:04:45 by squinn            #+#    #+#             */
-/*   Updated: 2025/07/07 16:28:13 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/25 21:04:47 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_isspace(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long long int	ft_atoi(const char *str)
 {
 	long long int	result;
 	int				sign;
@@ -49,23 +49,9 @@ int	ft_atoi(const char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			return ((int)(sign * result));
+			return (sign * result);
 		result = (str[i] - '0') + result * 10;
 		i++;
 	}
-	return ((int)(sign * result));
+	return (sign * result);
 }
-
-/*
-#include <stdio.h>
-#include <assert.h>
-#include <stdlib.h>
-
-int	main(int argc, char *argv[]) {
-	if (argc != 2)
-		return (1);
-	printf("ft_atoi: %d\n", ft_atoi(argv[1]));
-	printf("atoi: %d\n", atoi(argv[1]));
-	assert(ft_atoi(argv[1]) == atoi(argv[1]));
-}
-*/
