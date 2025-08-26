@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 14:58:54 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/26 18:55:32 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/26 19:07:02 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int contains_only_numbers(int argc, char *argv[]) {
   int i = 1;
   while (i < argc) {
     char *number = argv[i];
+    if (ft_atoi(number) != 0) {
+      i++;
+      continue;
+    }
     int j = 0;
     while (number[j]) {
       if (!ft_isdigit(number[j]))
