@@ -10,7 +10,8 @@ SRCFILES := initialize_stack.c \
 			sort.c \
 			stack_operation.c \
 			swap.c \
-			utils.c
+			utils.c \
+			validate_input.c
 
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -I
