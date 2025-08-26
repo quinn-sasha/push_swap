@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 14:58:54 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/26 18:47:15 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/26 18:55:32 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int contains_duplicates(int argc, char *argv[]) {
   while (i < argc - 1) {
     int j = i + 1;
     while (j < argc) {
-      if (nums[j] = nums[i])
+      if (nums[j] == nums[i])
         return TRUE;
       j++;
     }
