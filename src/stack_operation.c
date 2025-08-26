@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 09:10:06 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 11:01:51 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/26 21:20:36 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void pop_and_push(t_stack *from_stack, t_stack *to_stack) {
 }
 
 void pop_stack1_and_push_stack2(t_stack *stack1, t_stack *stack2) {
-  ft_putendl_fd("Pop stack1 and push stack2", STDOUT_FILENO);
+  ft_putendl_fd("pb", STDOUT_FILENO);
   pop_and_push(stack1, stack2);
 }
 
 void pop_stack2_and_push_stack1(t_stack *stack1, t_stack *stack2) {
-  ft_putendl_fd("Pop stack2 and push stack1", STDOUT_FILENO);
+  ft_putendl_fd("pa", STDOUT_FILENO);
   pop_and_push(stack2, stack1);
 }

@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 10:20:49 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 10:21:21 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/26 21:20:52 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void swap(t_stack *stack) {
 }
 
 void swap_stack1(t_stack *stack1) {
-  ft_putendl_fd("Swap top 2 elments of stack1", STDOUT_FILENO);
+  ft_putendl_fd("sa", STDOUT_FILENO);
   swap(stack1);
 }
