@@ -6,11 +6,22 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/26 19:10:19 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/26 19:38:05 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int in_ascending_order(int *nums, int size) {
+  int i = 0;
+  while (i < size - 1) {
+    if (nums[i] > nums[i + 1]) {
+      return FALSE;
+    }
+    i++;
+  }
+  return TRUE;
+}
 
 int main(int argc, char *argv[]) {
   if (argc == 1)
@@ -18,6 +29,10 @@ int main(int argc, char *argv[]) {
   if (argv[0][1] == '\0')
     exit(EXIT_SUCCESS);
   validate_input(argc, argv);
+  int *nums = convert_words_to_integers(argv + 1, argc -  1);
+  if (in_ascending_order(nums, argc - 1))
+    exit(EXIT_SUCCESS);
+  free(nums);
   t_stack stack1;
   t_stack stack2;
   initialize_stack1(&stack1, argc - 1, argv + 1);
