@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/26 18:31:56 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/26 21:37:50 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <limits.h>
 #include "../libft/libft.h"
 
-# define SMALLER_CHUNK_SIZE 20
-# define BIGGER_CHUNK_SIZE 50
+# define SMALLER_CHUNK_SIZE 15
+# define BIGGER_CHUNK_SIZE 45
 
 # define LEFT 0
 # define RIGHT 1
