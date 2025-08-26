@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 14:58:54 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/25 21:20:00 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/26 18:47:15 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,26 @@ int contains_only_int_type(int argc, char *argv[]) {
   return TRUE;
 }
 
+int contains_duplicates(int argc, char *argv[]) {
+  int nums[argc];
+  int i = 1;
+  while (i < argc) {
+    nums[i] = ft_atoi(argv[i]);
+    i++;
+  }
+  i = 1;
+  while (i < argc - 1) {
+    int j = i + 1;
+    while (j < argc) {
+      if (nums[j] = nums[i])
+        return TRUE;
+      j++;
+    }
+    i++;
+  }
+  return FALSE;
+}
+
 /*
 * 入力：プログラムのargc, argv
 * エラーケース：
@@ -51,12 +71,10 @@ int contains_only_int_type(int argc, char *argv[]) {
 * - 入力に重複がある
 */
 void validate_input(int argc, char *argv[]) {
-  if (!argv[0])
-    handle_error();
   if (!contains_only_numbers(argc, argv))
     handle_error();
   if (!contains_only_int_type(argc, argv))
     handle_error();
-  if (!contains_duplicates(argc, argv))
+  if (contains_duplicates(argc, argv))
     handle_error();
 }
