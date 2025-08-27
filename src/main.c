@@ -40,7 +40,8 @@ int	main(int argc, char *argv[])
 		exit(EXIT_SUCCESS);
 	validate_input(argc, argv);
 	nums = convert_words_to_integers(argv + 1, argc - 1);
-	if (in_ascending_order(nums, argc - 1)) {
+	if (in_ascending_order(nums, argc - 1))
+	{
 		free(nums);
 		exit(EXIT_SUCCESS);
 	}
