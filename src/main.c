@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:48:59 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/26 19:38:05 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/27 10:23:44 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ int	main(int argc, char *argv[])
 		exit(EXIT_SUCCESS);
 	validate_input(argc, argv);
 	nums = convert_words_to_integers(argv + 1, argc - 1);
-	if (in_ascending_order(nums, argc - 1))
+	if (in_ascending_order(nums, argc - 1)) {
+		free(nums);
 		exit(EXIT_SUCCESS);
+	}
 	free(nums);
 	initialize_stack1(&stack1, argc - 1, argv + 1);
 	initialize_stack2(&stack2);
