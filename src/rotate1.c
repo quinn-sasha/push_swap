@@ -12,11 +12,12 @@
 
 #include "../include/push_swap.h"
 
-void rotate_left(t_stack *stack) {
-  stack->head = stack->head->next;
+void	rotate_left(t_stack *stack)
+{
+	stack->head = stack->head->next;
 }
 
-void rotate_right(t_stack *stack) {
-  stack->head = stack->head->prev;
+void	rotate_right(t_stack *stack)
+{
+	stack->head = stack->head->prev;
 }
-
