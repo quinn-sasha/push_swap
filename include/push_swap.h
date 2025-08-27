@@ -6,7 +6,7 @@
 /*   By: squinn <squinn@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 13:49:02 by squinn            #+#    #+#             */
-/*   Updated: 2025/08/26 21:37:50 by squinn           ###   ########.fr       */
+/*   Updated: 2025/08/27 10:14:25 by squinn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ typedef struct s_stack
 	t_node			*nodes;
 }					t_stack;
 
-// validate_input.c
+// error.c
 void				handle_error(void);
+// validate_input.c
 int					contains_only_numbers(int argc, char *argv[]);
 int					contains_only_int_type(int argc, char *argv[]);
 int					contains_duplicates(int argc, char *argv[]);
